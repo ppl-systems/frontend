@@ -53,7 +53,7 @@ const Generator: React.FC = () => {
     };
 
     try {
-      const response = await fetch('http://localhost:8000/api/generate', {
+      const response = await fetch('http://localhost:8000/generate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -148,12 +148,12 @@ const Generator: React.FC = () => {
           <option value="">Select Lora</option>
           <option value="lora1">Lora 1</option>
           <option value="lora2">Lora 2</option>
-          {/* Add more lora options as needed */}
         </select>
         <button type="submit" style={{ backgroundColor: '#6200ee', color: '#f5f5f5', border: 'none', padding: '10px', cursor: 'pointer' }}>
           Generate Image
         </button>
       </form>
+      {/*  TODO: this needs to be turned into a component  */}
       <div style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', border: '1px solid #555', minHeight: '512px' }}>
         {imageSrc ? <img src={imageSrc} alt="Generated" style={{ maxWidth: '100%', maxHeight: '100%' }} /> : <p>No Image Generated</p>}
       </div>
